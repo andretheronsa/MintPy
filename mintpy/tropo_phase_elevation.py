@@ -84,11 +84,14 @@ def read_topographic_data(geom_file, metadata):
                         datasetName='height',
                         print_msg=False)[0]
 
-    print('considering the incidence angle of each pixel ...')
+    print('Using general Sentinel-1 Incidence angle of 36 degrees instead off incidence angle file')
+    inc_angle = 36
+
+    '''print('considering the incidence angle of each pixel ...')
     inc_angle = readfile.read(geom_file,
                               datasetName='incidenceAngle',
                               print_msg=False)[0]
-    dem *= 1.0/np.cos(inc_angle*np.pi/180.0)
+    dem *= 1.0/np.cos(inc_angle*np.pi/180.0)'''
 
     ref_y = int(metadata['REF_Y'])
     ref_x = int(metadata['REF_X'])
